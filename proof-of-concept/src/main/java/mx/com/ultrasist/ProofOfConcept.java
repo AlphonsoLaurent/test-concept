@@ -1,16 +1,11 @@
-package mx.com.ultrasist.proof_of_concept;
+package mx.com.ultrasist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-/**
- * Hello world!
- *
- */
 @SpringBootApplication
-public class App {
+public class ProofOfConcept {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
-		SpringApplication.run(App.class, args);
+		SpringApplication.run(ProofOfConcept.class, args);
 	}
 }
