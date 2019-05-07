@@ -1,4 +1,4 @@
-package mx.com.ultrasist.controller;
+package mx.com.ultrasist.proof_of_concept.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mx.com.ultrasist.message.Response;
-import mx.com.ultrasist.model.Customer;
+import mx.com.ultrasist.proof_of_concept.message.Response;
+import mx.com.ultrasist.proof_of_concept.model.Customer;
 
 @RestController
 @RequestMapping("/api/customer")

@@ -1,4 +1,4 @@
-package mx.com.ultrasist.model;
+package mx.com.ultrasist.proof_of_concept.model;
 
 public class Customer {
     private String firstname;

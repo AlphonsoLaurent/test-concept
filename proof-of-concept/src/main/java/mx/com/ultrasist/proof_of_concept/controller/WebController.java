@@ -1,4 +1,4 @@
-package mx.com.ultrasist.controller;
+package mx.com.ultrasist.proof_of_concept.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

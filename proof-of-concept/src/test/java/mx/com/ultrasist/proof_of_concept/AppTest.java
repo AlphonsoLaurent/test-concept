@@ -1,4 +1,4 @@
-package mx.com.ultrasist;
+package mx.com.ultrasist.proof_of_concept;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

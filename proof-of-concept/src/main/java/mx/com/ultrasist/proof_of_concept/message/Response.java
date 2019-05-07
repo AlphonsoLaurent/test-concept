@@ -1,4 +1,4 @@
-package mx.com.ultrasist.message;
+package mx.com.ultrasist.proof_of_concept.message;
 
 public class Response {
 	private String status;
