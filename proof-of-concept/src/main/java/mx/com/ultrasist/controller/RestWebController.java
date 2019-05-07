@@ -16,8 +16,19 @@ import mx.com.ultrasist.model.Customer;
 @RequestMapping("/api/customer")
 public class RestWebController {
 
-	List<Customer> cust = new ArrayList<Customer>();
+	static List<Customer> cust = new ArrayList<Customer>();
 
+	static {
+		Customer custom = null;
+		for(int x = 0; x<=10; x++) {
+			custom = new Customer();
+			custom.setFirstname("Alfonso "+x);
+			custom.setLastname("Laureano "+x);
+			cust.add(custom);
+		}
+	} 
+	
+	
 	@GetMapping(value = "/all")
 	public Response getResource() {
 		Response response = new Response("Done", cust);
