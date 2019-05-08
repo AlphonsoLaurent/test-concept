@@ -16,8 +16,8 @@ $( document ).ready(function() {
 					$('#getResultDiv ul').empty();
 					var custList = "";
 					$.each(result.data, function(i, customer){
-						var customer = "- Customer with Id = " + i + ", firstname = " + customer.firstname + ", lastName = " + customer.lastname + "<br>";
-						$('#getResultDiv .list-group').append(customer)
+						var customer1 = "- Customer with Id = " + i + ", firstname = " + customer.firstname + ", lastName = " + customer.lastname + "<br>";
+						$('#getResultDiv .list-group').append(customer1)
 			        });
 					console.log("Success: ", result);
 				}else{
