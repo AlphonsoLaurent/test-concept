@@ -38,6 +38,14 @@ public class RestWebController {
 	public Response getResource() {
 		log.info("::::::::::::::::::::::HOLA ESTA ES UNA PRUEBA DEL LOG4J::::::::::::::::::::::");
 		//Response response = new Response("Done", cust);
+		if(true) {
+			System.out.println("es una mala practica");
+		}
+		
+		for(int x=0; x<1000; x++) {
+			System.out.println("sin nada que imprimir");
+		}
+		
 		return new Response("Done", cust);
 	}
 

@@ -2,7 +2,3 @@ autoEnabled=true
 eclipse.preferences.version=1
 extraProperties=
 fileExclusions=
-idePrefixKey=
-projectKey=mx.com.ultrasist.proof_of_concept\:proof-of-concept
-serverId=sonar-admin-admin
-sqPrefixKey=
