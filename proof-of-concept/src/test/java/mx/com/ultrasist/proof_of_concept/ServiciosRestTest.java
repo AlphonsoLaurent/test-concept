@@ -40,16 +40,19 @@ public class ServiciosRestTest {
 
 	@Test
 	public void test() throws Exception { 
-		
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"); 
+		System.out.println("\n\n\n\n\n\n\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("::::::::::::::::::::::::::TEST JUNIT::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		MvcResult result = mockMvc.perform(requestBuilder).andReturn(); 
 		MockHttpServletResponse response = result.getResponse(); 
 		
 		System.out.println("La respuesta:::::::::::::::::::::: "+response.getContentAsString());
 		
 		assertEquals(200, response.getStatus());
 		 
-		 
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\\n\\n\\n\\n\\n\\n\\n"); 
 	}
 	
 	 
