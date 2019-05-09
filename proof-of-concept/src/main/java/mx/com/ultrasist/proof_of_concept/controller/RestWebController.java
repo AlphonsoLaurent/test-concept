@@ -20,7 +20,7 @@ import mx.com.ultrasist.proof_of_concept.model.Customer;
 public class RestWebController {
 	static Logger log = LoggerFactory.getLogger(RestWebController.class);
 
-	static List<Customer> cust = new ArrayList<Customer>();
+	static List<Customer> cust = new ArrayList<>();
 
 	static {
 		Customer custom = null;
@@ -37,17 +37,16 @@ public class RestWebController {
 	@ResponseBody
 	public Response getResource() {
 		log.info("::::::::::::::::::::::HOLA ESTA ES UNA PRUEBA DEL LOG4J::::::::::::::::::::::");
-		Response response = new Response("Done", cust); 
-		return response;
+		//Response response = new Response("Done", cust);
+		return new Response("Done", cust);
 	}
 
 	@PostMapping(value = "/save")
 	public Response postCustomer(@RequestBody Customer customer) {
 		log.info("::::::::::::::::::::::postCustomer::::::::::::::::::::::");
-		cust.add(customer);
-		
-		// Create Response Object
-		Response response = new Response("Done", customer);
-		return response;
+		cust.add(customer); 
+		/* Create Response Object
+		Response response = new Response("Done", customer);*/
+		return new Response("Done", customer);
 	}
 }

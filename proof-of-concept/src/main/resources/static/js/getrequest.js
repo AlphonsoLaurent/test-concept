@@ -14,7 +14,7 @@ $( document ).ready(function() {
 			success: function(result){
 				if(result.status == "Done"){
 					$('#getResultDiv ul').empty();
-					var custList = "";
+					//var custList = "";
 					$.each(result.data, function(i, customer){
 						var customer1 = "- Customer with Id = " + i + ", firstname = " + customer.firstname + ", lastName = " + customer.lastname + "<br>";
 						$('#getResultDiv .list-group').append(customer1)
