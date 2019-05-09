@@ -92,12 +92,12 @@
 	<distributionManagement>
 		<repository>
 			<id>deployment</id>
-			<name>Internat releases</name>
+			<name>Internal Releases</name>
 			<url>http://localhost:8081/nexus/repository/repository-ultrasist-release/</url>
 		</repository>
 		<snapshotRepository>
 			<id>deployment</id>
-			<name>Internat snapshot</name>
+			<name>Internal Snapshot Realeases</name>
 			<url>http://localhost:8081/nexus/repository/repository-ultrasist-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>

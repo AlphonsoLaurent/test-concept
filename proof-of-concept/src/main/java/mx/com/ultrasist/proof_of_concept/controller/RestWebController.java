@@ -42,7 +42,7 @@ public class RestWebController {
 			System.out.println("es una mala practica");
 		}
 		
-		for(int x=0; x<1000; x++) {
+		for(int x=0; x<2; x++) {
 			System.out.println("sin nada que imprimir");
 		}
 		
