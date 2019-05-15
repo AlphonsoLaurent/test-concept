@@ -159,7 +159,7 @@
 			   </executions>
  			   <configuration>
  			      <serverId>nexus</serverId>
- 			      <nexusUrl>http://192.168.1.182:8081/nexus/</nexusUrl>
+ 			      <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
 				   <skipStaging>true</skipStaging>
  			   </configuration>
 			</plugin> 
