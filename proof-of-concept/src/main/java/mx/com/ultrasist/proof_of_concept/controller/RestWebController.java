@@ -42,6 +42,13 @@ public class RestWebController {
 			custom.setLastname("Picapiedra "+x);
 			cust.add(custom);
 		}
+		
+		
+		if(true) {
+			for (int i = 0; i < 10; i++) {
+				System.out.println("hola "+i);
+			}
+		}
 		ResponseDTO response = getResponse(true, "::::::Peticion realizada en la IP: "+serverAddress, cust);
 		return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK); //list
 	}
