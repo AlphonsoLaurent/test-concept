@@ -1,0 +1,20 @@
+microservice1:
+      image: "proof-of-concept:latest"
+      expose:
+        - "8888"
+microservice2:
+      image: "proof-of-concept:latest"
+      expose:
+        - "8888"
+microservice3:
+      image: "proof-of-concept:latest"
+      expose:
+        - "8888"
+loadbalancer:
+      image: "dockercloud/haproxy:latest"
+      links:
+        - microservice1
+        - microservice2
+        - microservice3
+      ports:
+        - "80:80"
