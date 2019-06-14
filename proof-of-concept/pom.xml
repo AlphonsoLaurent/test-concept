@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		
+		<docker.image.prefix>proof-of-concept</docker.image.prefix>
 		
 		<category>Database</category>
         <title>JDBC</title>
@@ -32,6 +32,7 @@
         <camel.osgi.dynamic>*</camel.osgi.dynamic>
         
         <version.springboot>1.5.7.RELEASE</version.springboot>
+        <finalName>proof-of-concept</finalName>
 	</properties>
 
 	<dependencies>
@@ -44,10 +45,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-		  <groupId>org.springframework.boot</groupId>
-		  <artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		
+<!-- 		<dependency> -->
+<!-- 		  <groupId>org.springframework.boot</groupId> -->
+<!-- 		  <artifactId>spring-boot-starter-security</artifactId> -->
+<!-- 		</dependency> -->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -80,13 +83,13 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <scope>runtime</scope>
         </dependency>
-		
-		
+		 
 		 
 		
 	</dependencies>
 
 	<build>
+		<finalName>${finalName}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -99,8 +102,7 @@
 		    </plugin>
 		    <plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-compiler-plugin</artifactId>
-		        <version>3.5.1</version>
+		        <artifactId>maven-compiler-plugin</artifactId> 
 	            <configuration>
 	                <source>${java.version}</source>
 	                <target>${java.version}</target>
@@ -109,7 +111,6 @@
 		    <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-resources-plugin</artifactId>
-			<version>2.6</version>
 		    <configuration>
 			<source>${java.version}</source>
 			<target>${java.version}</target>
@@ -163,10 +164,34 @@
 				   <skipStaging>true</skipStaging>
  			   </configuration>
 			</plugin> 
+ 
 		     
-		     
-		     
-		     
+		     <plugin>
+		     	<groupId>com.spotify</groupId>
+		     	<artifactId>docker-maven-plugin</artifactId>
+		     	<version>0.4.13</version>
+		     	<configuration>
+		     		<imageName>${project.artifactId}</imageName>
+					<baseImage>jgeusebroek/minimal-jre-8</baseImage>
+					<entryPoint>["java","-jar", "/${project.build.finalName}.jar" ]</entryPoint>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>	
+					</resources>
+		     	</configuration>
+		     	<executions>
+		     		<execution>
+		     			<id>build-image</id>
+		     			<phase>package</phase>
+		     			<goals>
+		     				<goal>build</goal>
+		     			</goals>
+		     		</execution>
+		     	</executions>
+		     </plugin>
 		</plugins>
 		
 		

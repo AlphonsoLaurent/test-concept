@@ -32,7 +32,7 @@ public class ServiciosRestTest {
 	@Before
 	public void setUp() throws Exception { 
 		
-		requestBuilder = MockMvcRequestBuilders.get( "/api/customer/all")
+		requestBuilder = MockMvcRequestBuilders.get( "/proof-of-concept/api/customer/all")
 						.accept( MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON);
 		
