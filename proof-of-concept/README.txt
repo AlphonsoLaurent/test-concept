@@ -32,23 +32,14 @@ Example: docker commit f75580fc9ef8
 Levantar un docker con volumen 
 docker run -d -p 49165:22 -p 49161:1521 -p 49162:8080 -v $(pwd)/data:data arahman/docker-oracle-xe-11g /sbin/my_init
 LEVANTA EL SERVIDOR DE BASE DE DATOS ORACLE
-
-
-docker start 1d56d083f4d8
-
-
-docker run -d -p 8095:8095 -v $(pwd)/data:data proof-of-concept/proof-of-concept:0.0.1-SNAPSHOT
-
-
-
+ 
+ 
 
 docker run -d -p 8081:8888 -v $(pwd)/ proof-of-concept:latest
 
 
 docker run -d -it --name micro1 -p 8082:8888 -v $(pwd)/ proof-of-concept:latest
-
-dockers
-docker run -d -it --name oracle-xe-alt -v  /Users/Shared/oracle/xe/data:/sbin/my_init arahman/docker-oracle-xe-11g
+ 
 
 
 BORRA TODOS LOS DOCKERS CON STATUS EXITED
@@ -80,9 +71,7 @@ docker rm $(docker ps --all -q -f status=dead)
 
 
 
-kubectl run kubernetes-bootcamp --image= proof-of-concept:latest --port=8085
-
-kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080
+kubectl run kubernetes-bootcamp --image=proof-of-concept:latest --port=8085 
 
  
 
@@ -91,12 +80,16 @@ kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcam
 2.- mvn clean install
 
 3.- docker run -d -it --name desambdv2 -p 8083:8090 -v $(pwd)/ desam:latest
+ 
 
+=============SUBIR UNA IMAGEN DOCKER EN UN REPOSITORIO=======================
 
+1.- docker login --username=alphonsolaurent email=alphonsolaurent@gmail.com
 
-docker run -d -it --name desambdvn -p 8089:8090 -v $(pwd)/ desam:latest
+2.- docker tag 92d292bb9e25 alphonsolaurent/repository_desa:version1
+3.- docker push alphonsolaurent/repository_desa
 
-
+=============SUBIR UNA IMAGEN DOCKER EN UN REPOSITORIO=======================
 
 
 
